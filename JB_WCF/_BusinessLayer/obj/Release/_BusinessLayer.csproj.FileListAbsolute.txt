@@ -1,0 +1,13 @@
+C:\Users\Mustafa\Desktop\JB_WCF\_BusinessLayer\bin\Release\_BusinessLayer.dll
+C:\Users\Mustafa\Desktop\JB_WCF\_BusinessLayer\bin\Release\_BusinessLayer.pdb
+C:\Users\Mustafa\Desktop\JB_WCF\_BusinessLayer\bin\Release\_DataLayer.dll
+C:\Users\Mustafa\Desktop\JB_WCF\_BusinessLayer\bin\Release\_DbEntities.dll
+C:\Users\Mustafa\Desktop\JB_WCF\_BusinessLayer\bin\Release\EntityFramework.dll
+C:\Users\Mustafa\Desktop\JB_WCF\_BusinessLayer\bin\Release\_DataLayer.pdb
+C:\Users\Mustafa\Desktop\JB_WCF\_BusinessLayer\bin\Release\_DbEntities.pdb
+C:\Users\Mustafa\Desktop\JB_WCF\_BusinessLayer\bin\Release\_DbEntities.dll.config
+C:\Users\Mustafa\Desktop\JB_WCF\_BusinessLayer\bin\Release\EntityFramework.xml
+C:\Users\Mustafa\Desktop\JB_WCF\_BusinessLayer\obj\Release\_BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Mustafa\Desktop\JB_WCF\_BusinessLayer\obj\Release\_BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Mustafa\Desktop\JB_WCF\_BusinessLayer\obj\Release\_BusinessLayer.dll
+C:\Users\Mustafa\Desktop\JB_WCF\_BusinessLayer\obj\Release\_BusinessLayer.pdb

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="37ddf99b9d80457c912c5e2f523c7c0e" Name="Diagram1">
+        <EntityTypeShape EntityType="JumboBossModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JumboBossModel.Category" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JumboBossModel.Entity" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JumboBossModel.Menu" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JumboBossModel.Order" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JumboBossModel.Payment" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JumboBossModel.Product_Price" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JumboBossModel.Product" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JumboBossModel.Stock" Width="1.5" PointX="5.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JumboBossModel.Ticket" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JumboBossModel.User_Departmant" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JumboBossModel.User_Roles" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JumboBossModel.UserPermission" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="JumboBossModel.User" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="JumboBossModel.FK_dbo_Orders_dbo_Payment_PaymentId" ManuallyRouted="false" />
+        <AssociationConnector Association="JumboBossModel.FK_dbo_Orders_dbo_Stock_StokId" ManuallyRouted="false" />
+        <AssociationConnector Association="JumboBossModel.FK_dbo_User_Departmant_dbo_User_Roles_Role_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="JumboBossModel.FK_dbo_User_Roles_dbo_Users_User_Id_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="JumboBossModel.FK_dbo_UserPermissions_dbo_Users_User_Id" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

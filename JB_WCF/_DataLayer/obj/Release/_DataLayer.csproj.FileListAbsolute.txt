@@ -1,0 +1,5 @@
+C:\Users\Mustafa\Desktop\JB_WCF\_DataLayer\bin\Release\_DataLayer.dll
+C:\Users\Mustafa\Desktop\JB_WCF\_DataLayer\bin\Release\_DataLayer.pdb
+C:\Users\Mustafa\Desktop\JB_WCF\_DataLayer\obj\Release\_DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Mustafa\Desktop\JB_WCF\_DataLayer\obj\Release\_DataLayer.dll
+C:\Users\Mustafa\Desktop\JB_WCF\_DataLayer\obj\Release\_DataLayer.pdb

@@ -1,0 +1,11 @@
+C:\Users\Mustafa\Desktop\JB_WCF\_DbEntities\bin\Release\_DbEntities.dll.config
+C:\Users\Mustafa\Desktop\JB_WCF\_DbEntities\bin\Release\_DbEntities.dll
+C:\Users\Mustafa\Desktop\JB_WCF\_DbEntities\bin\Release\_DbEntities.pdb
+C:\Users\Mustafa\Desktop\JB_WCF\_DbEntities\bin\Release\EntityFramework.dll
+C:\Users\Mustafa\Desktop\JB_WCF\_DbEntities\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Mustafa\Desktop\JB_WCF\_DbEntities\bin\Release\EntityFramework.xml
+C:\Users\Mustafa\Desktop\JB_WCF\_DbEntities\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Mustafa\Desktop\JB_WCF\_DbEntities\obj\Release\_DbEntities.csprojResolveAssemblyReference.cache
+C:\Users\Mustafa\Desktop\JB_WCF\_DbEntities\obj\Release\_DbEntities.csproj.CoreCompileInputs.cache
+C:\Users\Mustafa\Desktop\JB_WCF\_DbEntities\obj\Release\_DbEntities.dll
+C:\Users\Mustafa\Desktop\JB_WCF\_DbEntities\obj\Release\_DbEntities.pdb

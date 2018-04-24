@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JumboBossModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Entities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EntitiesName" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="IsFull" Type="bit" Nullable="false" />
+    <Property Name="TicetId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenuName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TicketId" Type="int" Nullable="false" />
+    <Property Name="PaymentId" Type="int" />
+    <Property Name="StokId" Type="int" />
+    <Property Name="StoreID" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ItemId" Type="int" />
+    <Property Name="ItemName" Type="varchar" MaxLength="50" />
+    <Property Name="Price" Type="money" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PortionCount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="StateName" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Payments" Type="nvarchar(max)" />
+    <Property Name="PaymentAmount" Type="money" />
+    <Property Name="OrderNumber" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="TheRemainingAmount" Type="money" />
+  </EntityType>
+  <EntityType Name="Product_Price">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductUnit" Type="varchar" MaxLength="50" />
+    <Property Name="Multiplier" Type="float" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Product_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Picture" Type="varbinary(max)" />
+    <Property Name="ProductName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductAbout" Type="varchar" MaxLength="250" />
+    <Property Name="ServiceTime" Type="tinyint" Nullable="false" />
+    <Property Name="GroupId" Type="int" Nullable="false" />
+    <Property Name="GroupName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartRangeToTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="StopRangeToTime" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tickets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TableName" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsClosed" Type="bit" Nullable="false" />
+    <Property Name="IsLocked" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_Departmant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmanName" Type="nvarchar(max)" />
+    <Property Name="DefaultMenu_Id" Type="int" Nullable="false" />
+    <Property Name="Screen_Id" Type="int" Nullable="false" />
+    <Property Name="Role_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="User_Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar(max)" />
+    <Property Name="User_Id_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="UserPermissions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DayOperations" Type="bit" Nullable="false" />
+    <Property Name="POS" Type="bit" Nullable="false" />
+    <Property Name="Addition" Type="bit" Nullable="false" />
+    <Property Name="Accounts" Type="bit" Nullable="false" />
+    <Property Name="Stockt" Type="bit" Nullable="false" />
+    <Property Name="Reporting" Type="bit" Nullable="false" />
+    <Property Name="Setting" Type="bit" Nullable="false" />
+    <Property Name="nulllll" Type="bit" Nullable="false" />
+    <Property Name="User_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Passowrd" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_Orders_dbo_Payment_PaymentId">
+    <End Role="Payment" Type="Self.Payment" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Orders_dbo_Stock_StokId">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="StokId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_User_Departmant_dbo_User_Roles_Role_Id">
+    <End Role="User_Roles" Type="Self.User_Roles" Multiplicity="0..1" />
+    <End Role="User_Departmant" Type="Self.User_Departmant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Departmant">
+        <PropertyRef Name="Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_User_Roles_dbo_Users_User_Id_Id">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="User_Roles" Type="Self.User_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Roles">
+        <PropertyRef Name="User_Id_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserPermissions_dbo_Users_User_Id">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="UserPermissions" Type="Self.UserPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPermissions">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JumboBossModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Entities" EntityType="Self.Entities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menus" EntityType="Self.Menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_Price" EntityType="Self.Product_Price" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stock" EntityType="Self.Stock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Departmant" EntityType="Self.User_Departmant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Roles" EntityType="Self.User_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserPermissions" EntityType="Self.UserPermissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_Orders_dbo_Payment_PaymentId" Association="Self.FK_dbo_Orders_dbo_Payment_PaymentId">
+      <End Role="Payment" EntitySet="Payment" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Orders_dbo_Stock_StokId" Association="Self.FK_dbo_Orders_dbo_Stock_StokId">
+      <End Role="Stock" EntitySet="Stock" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_User_Departmant_dbo_User_Roles_Role_Id" Association="Self.FK_dbo_User_Departmant_dbo_User_Roles_Role_Id">
+      <End Role="User_Roles" EntitySet="User_Roles" />
+      <End Role="User_Departmant" EntitySet="User_Departmant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_User_Roles_dbo_Users_User_Id_Id" Association="Self.FK_dbo_User_Roles_dbo_Users_User_Id_Id">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="User_Roles" EntitySet="User_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserPermissions_dbo_Users_User_Id" Association="Self.FK_dbo_UserPermissions_dbo_Users_User_Id">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserPermissions" EntitySet="UserPermissions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

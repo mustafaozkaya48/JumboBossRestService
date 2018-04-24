@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JumboBossModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Entity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EntitiesName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsFull" Type="Boolean" Nullable="false" />
+    <Property Name="TicetId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentId" Type="Int32" />
+    <Property Name="StokId" Type="Int32" />
+    <Property Name="StoreID" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ItemId" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PortionCount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="Time" Precision="7" />
+    <NavigationProperty Name="Payment" Relationship="Self.FK_dbo_Orders_dbo_Payment_PaymentId" FromRole="Orders" ToRole="Payment" />
+    <NavigationProperty Name="Stock" Relationship="Self.FK_dbo_Orders_dbo_Stock_StokId" FromRole="Orders" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Payments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OrderNumber" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TheRemainingAmount" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_Payment_PaymentId" FromRole="Payment" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Product_Price">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Multiplier" Type="Double" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Product_Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProductAbout" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceTime" Type="Byte" Nullable="false" />
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StartRangeToTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="StopRangeToTime" Type="Time" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_Stock_StokId" FromRole="Stock" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TableName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsClosed" Type="Boolean" Nullable="false" />
+    <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_Departmant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmanName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultMenu_Id" Type="Int32" Nullable="false" />
+    <Property Name="Screen_Id" Type="Int32" Nullable="false" />
+    <Property Name="Role_Id" Type="Int32" />
+    <NavigationProperty Name="User_Roles" Relationship="Self.FK_dbo_User_Departmant_dbo_User_Roles_Role_Id" FromRole="User_Departmant" ToRole="User_Roles" />
+  </EntityType>
+  <EntityType Name="User_Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="User_Id_Id" Type="Int32" />
+    <NavigationProperty Name="User_Departmant" Relationship="Self.FK_dbo_User_Departmant_dbo_User_Roles_Role_Id" FromRole="User_Roles" ToRole="User_Departmant" />
+    <NavigationProperty Name="User" Relationship="Self.FK_dbo_User_Roles_dbo_Users_User_Id_Id" FromRole="User_Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="UserPermission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DayOperations" Type="Boolean" Nullable="false" />
+    <Property Name="POS" Type="Boolean" Nullable="false" />
+    <Property Name="Addition" Type="Boolean" Nullable="false" />
+    <Property Name="Accounts" Type="Boolean" Nullable="false" />
+    <Property Name="Stockt" Type="Boolean" Nullable="false" />
+    <Property Name="Reporting" Type="Boolean" Nullable="false" />
+    <Property Name="Setting" Type="Boolean" Nullable="false" />
+    <Property Name="nulllll" Type="Boolean" Nullable="false" />
+    <Property Name="User_Id" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK_dbo_UserPermissions_dbo_Users_User_Id" FromRole="UserPermissions" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Passowrd" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User_Roles" Relationship="Self.FK_dbo_User_Roles_dbo_Users_User_Id_Id" FromRole="Users" ToRole="User_Roles" />
+    <NavigationProperty Name="UserPermissions" Relationship="Self.FK_dbo_UserPermissions_dbo_Users_User_Id" FromRole="Users" ToRole="UserPermissions" />
+  </EntityType>
+  <Association Name="FK_dbo_Orders_dbo_Payment_PaymentId">
+    <End Role="Payment" Type="Self.Payment" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Orders_dbo_Stock_StokId">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="StokId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_User_Departmant_dbo_User_Roles_Role_Id">
+    <End Role="User_Roles" Type="Self.User_Roles" Multiplicity="0..1" />
+    <End Role="User_Departmant" Type="Self.User_Departmant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Departmant">
+        <PropertyRef Name="Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_User_Roles_dbo_Users_User_Id_Id">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="User_Roles" Type="Self.User_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Roles">
+        <PropertyRef Name="User_Id_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserPermissions_dbo_Users_User_Id">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="UserPermissions" Type="Self.UserPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPermissions">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JumboBossEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Entities" EntityType="Self.Entity" />
+    <EntitySet Name="Menus" EntityType="Self.Menu" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="Product_Price" EntityType="Self.Product_Price" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Stocks" EntityType="Self.Stock" />
+    <EntitySet Name="Tickets" EntityType="Self.Ticket" />
+    <EntitySet Name="User_Departmant" EntityType="Self.User_Departmant" />
+    <EntitySet Name="User_Roles" EntityType="Self.User_Roles" />
+    <EntitySet Name="UserPermissions" EntityType="Self.UserPermission" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_dbo_Orders_dbo_Payment_PaymentId" Association="Self.FK_dbo_Orders_dbo_Payment_PaymentId">
+      <End Role="Payment" EntitySet="Payments" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Orders_dbo_Stock_StokId" Association="Self.FK_dbo_Orders_dbo_Stock_StokId">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_User_Departmant_dbo_User_Roles_Role_Id" Association="Self.FK_dbo_User_Departmant_dbo_User_Roles_Role_Id">
+      <End Role="User_Roles" EntitySet="User_Roles" />
+      <End Role="User_Departmant" EntitySet="User_Departmant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_User_Roles_dbo_Users_User_Id_Id" Association="Self.FK_dbo_User_Roles_dbo_Users_User_Id_Id">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="User_Roles" EntitySet="User_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserPermissions_dbo_Users_User_Id" Association="Self.FK_dbo_UserPermissions_dbo_Users_User_Id">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserPermissions" EntitySet="UserPermissions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
